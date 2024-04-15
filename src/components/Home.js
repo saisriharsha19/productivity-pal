@@ -42,7 +42,7 @@ const Home = () => {
 
           {addNotification && (
             <div className="z-10 px-3 py-2 rounded-md bg-white border-l-[5px] flex items-center gap-2 border-green-600 fixed bottom-8 left-[50%] -translate-x-[50%]">
-              <FaCheck className=" text-xl text-green-500" />
+              <FaCheck className=" text-xl text-lime-700" />
               <h2 className=" max-md:text-xs text-sm text-slate-600 font-semibold">
                 Added task - {addNotificationTitle}
               </h2>
@@ -51,7 +51,7 @@ const Home = () => {
 
           {editNotification && (
             <div className="z-10 px-3 py-2 rounded-md bg-white border-l-[5px] flex items-center gap-2 border-green-600 fixed bottom-8 left-[50%] -translate-x-[50%]">
-              <FaCheck className=" text-xl text-green-500" />{" "}
+              <FaCheck className=" text-xl text-lime-700" />{" "}
               <h2 className=" max-md:text-xs text-sm text-slate-600 font-semibold">
                 Task {editNotificationTitle} updated
               </h2>
@@ -60,7 +60,7 @@ const Home = () => {
 
           {deleteNotification && (
             <div className="z-10 px-3 py-2 rounded-md bg-white border-l-[5px] flex items-center gap-2 border-green-600 fixed bottom-8 left-[50%] -translate-x-[50%]">
-              <FaCheck className=" text-xl text-green-500" />
+              <FaCheck className=" text-xl text-lime-700" />
               <h2 className="max-md:text-xs text-sm text-slate-600 font-semibold">
                 Deleted Task - {deleteNotificationTitle}
               </h2>
