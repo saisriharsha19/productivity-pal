@@ -188,8 +188,8 @@ const FormInputs = ({
         <div>
           <label
             className={`text-sm max-sm:text-xs ${
-              nameCountError ? "text-red-500" : "text-purple-200"
-            } text-purple-200`}
+              nameCountError ? "text-red-500" : "text-blue-200"
+            } text-blue-200`}
             htmlFor="taskName"
           >
             Task Name
@@ -212,8 +212,8 @@ const FormInputs = ({
         <div className=" mt-7 max-sm:mt-4">
           <label
             className={`text-sm max-sm:text-xs ${
-              descriptionCountError ? "text-red-500" : "text-purple-200"
-            } text-purple-200`}
+              descriptionCountError ? "text-red-500" : "text-blue-200"
+            } text-blue-200`}
             htmlFor="taskDescription"
           >
             Task Description
@@ -233,7 +233,7 @@ const FormInputs = ({
         </div>
 
         <div ref={catagoryRef} className=" mt-7 max-sm:mt-4">
-          <label className="text-sm max-sm:text-xs text-purple-200">Category</label>
+          <label className="text-sm max-sm:text-xs text-blue-200">Category</label>
 
           <div
             onClick={() => setCategoryOpen(!CategoryOpen)}
@@ -243,7 +243,7 @@ const FormInputs = ({
               {selectedCatagory.map((val, index) => (
                 <div
                   key={index}
-                  className=" bg-purple-500 text-black text-sm max-sm:text-xs flex items-center gap-1 px-3 py-2 max-sm:py-2 font-medium rounded-lg"
+                  className=" bg-blue-500 text-black text-sm max-sm:text-xs flex items-center gap-1 px-3 py-2 max-sm:py-2 font-medium rounded-lg"
                 >
                   <span className=" text-xl max-sm:text-sm">{val.emoji}</span>{" "}
                   {val.catagory}
@@ -261,7 +261,7 @@ const FormInputs = ({
           </div>
           {CategoryOpen ? (
             <div className="mt-3">
-              <ul className=" p-2 bg-purple-400 flex flex-col gap-2 max-sm:gap-1 rounded-xl">
+              <ul className=" p-2 bg-blue-400 flex flex-col gap-2 max-sm:gap-1 rounded-xl">
                 <li className=" my-2 px-3 text-black max-sm:text-sm">Select max (3 Categories)</li>
                 {catagory.map((val, index) => (
                   <CatagoryBtn
@@ -282,9 +282,9 @@ const FormInputs = ({
             type="submit"
             className={`${
               nameCountError || descriptionCountError
-                ? "bg-purple-700 cursor-not-allowed text-purple-400"
-                : "hover:bg-purple-800 text-black "
-            } transition text-xl font-bold bg-purple-400 p-4 max-sm:p-3 max-sm:text-lg rounded-xl w-full`}
+                ? "bg-blue-700 cursor-not-allowed text-blue-400"
+                : "hover:background-dark text-black "
+            } transition text-xl font-bold bg-blue-400 p-4 max-sm:p-3 max-sm:text-lg rounded-xl w-full`}
           >
             Create Task
           </button>
