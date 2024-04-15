@@ -1,1 +1,1 @@
-# productivity-pal
+# Productivity Pal Application
