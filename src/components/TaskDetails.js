@@ -6,7 +6,6 @@ import PageNotFound from "./PageNotFound";
 const TaskDetails = () => {
   const { id } = useParams();
   const items = JSON.parse(localStorage.getItem("todoItems"));
-
   const details = items.find((val) => val.id.toString() === id);
 
   if(!details){

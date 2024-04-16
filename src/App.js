@@ -17,7 +17,7 @@ const App = () => {
 
           <Route path="/edit" element={<EditTodo />} />
 
-          <Route path="/todo/:id" element={<TaskDetails />} />
+          <Route path="/todo/:id" element={<TaskDetails/>} />
 
           <Route path="*" element={<PageNotFound />}/>
         </Routes>
