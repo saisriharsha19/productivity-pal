@@ -33,7 +33,6 @@
   --tw-bg-opacity: 1;
   background-color: rgb(219, 225, 241, var(--tw-bg-opacity));
 }
-
 .background-dark{
   background-color: rgb(65, 103, 207);
 }
@@ -91,4 +90,52 @@
     conic-gradient(at -20% 50%, #0000 88deg, #000 88.25deg 91.75deg, #0000 92deg);
   transform-origin: 83.33333% 50%;
   transform: rotate(calc(var(--value) * 180deg / 100))
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 9999;
+  animation: fadeInOut 5s ease;
+}
+
+.praise-message {
+  font-size: 18px;
+  text-align: center;
+}
+
+.cancel-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.clap-emoji {
+  font-size: 36px;
+  margin-top: 10px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
