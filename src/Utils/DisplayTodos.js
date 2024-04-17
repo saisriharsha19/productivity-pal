@@ -89,28 +89,23 @@ const DisplayTodos = ({
 )}
 
 
-          <div className="max-md:container border text-black max-w-[700px] mt-10 max-sm:mt-2 m-auto rounded-3xl bg-gradient-to-r from-purple-500 to-purple-700 p-10 max-sm:p-5">
+          <div className="max-md:container border text-black max-w-[700px] mt-10 max-sm:mt-2 m-auto rounded-3xl background-dark p-10 max-sm:p-5">
             <h1 className=" text-2xl max-sm:text-base font-medium">
-              Progress summery
+              Summary
             </h1>
             <h3 className=" max-sm:text-xs">{`${data.length} ${data.length > 1 ? "Tasks" : "Task"}`}</h3>
 
-            <div className="flex flex-col w-[60%] max-sm:w-[100%] mt-7 max-sm:mt-5">
+            <div className="flex flex-col w-[60%] max-sm:w-[100%] mt-3 max-sm:mt-5 overflow-hidden">
               <div className="flex justify-between items-center">
-                <p className=" max-sm:text-xs">
-                  Progress
-                  <span className={` text-sm max-sm:text-xs ${handleTasksStatus() === "No tasks completed" ? "text-red-700" : handleTasksStatus() === "Less than half tasks completed" ? "text-red-700" : "text-green-500"} font-semibold`}> ({handleTasksStatus()})</span>
+                <p>
+                  <span className={` ${handleTasksStatus() === "No tasks completed" ? "text-red-700" : handleTasksStatus() === "Less than half tasks completed" ? "text-red-700" : "text-lime-700"} font-semibold`}> Progress</span>
                 </p>
-                <p className="text-sm">{completedTask()}%</p>
+                <p className={` ${handleTasksStatus() === "No tasks completed" ? "text-red-700" : handleTasksStatus() === "Less than half tasks completed" ? "text-red-700" : "text-lime-700"} font-semibold`}>{completedTask()}%</p>
               </div>
-
-              <div className="  bg-purple-800 w-full h-2 mt-2 rounded-3xl">
-                <div
-                  className="h-full rounded-3xl transition-all bg-purple-100"
-                  style={{ width: `${completedTask()}%` }}
-                ></div>
+              <div className="mt-3" role="progressbar" aria-valuenow={completedTask()} aria-valuemin="0" aria-valuemax="100" style={{ '--value': `${completedTask()}`, position: 'relative', alignSelf: 'center' }}>
               </div>
             </div>
+
           </div>
 
           <div className="max-md:container max-w-[700px] m-auto mt-7 max-sm:mt-5 mb-7 max-sm:mb-5 relative">
@@ -121,7 +116,7 @@ const DisplayTodos = ({
               onChange={handleSearch}
               className="w-full h-14 max-sm:h-12 rounded-xl pl-11 placeholder:text-sm outline-none"
             />
-            <IoMdSearch className="absolute top-[50%] left-3 -translate-y-[50%] text-purple-600 text-2xl max-sm:text-xl" />
+            <IoMdSearch className="absolute top-[50%] left-3 -translate-y-[50%] text-blue-600 text-2xl max-sm:text-xl" />
           </div>
 
           <div className="max-md:container max-w-[700px] m-auto flex flex-col gap-4 max-sm:gap-3 pb-5">
@@ -147,6 +142,7 @@ const DisplayTodos = ({
       )}
     </>
   );
+
 };
 
 export default DisplayTodos;
