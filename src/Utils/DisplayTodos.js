@@ -13,10 +13,11 @@ const DisplayTodos = ({
 
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [praise, setPraise] = useState("");
 
   const completedTask = () => {
     const completed = data.filter((val) => val.check);
-
+    
     if (data.length) {
       const completePercentage = (completed.length / data.length) * 100;
       return completePercentage.toFixed();
@@ -38,6 +39,29 @@ const DisplayTodos = ({
     setSearchResults(filterResults);
   }, [data, search]);
 
+  useEffect(() => {
+    const completed = data.filter((val) => val.check);
+    const prevCompletedLength = localStorage.getItem("prevCompletedLength");
+    if (prevCompletedLength && completed.length > parseInt(prevCompletedLength)) {
+      const praises = [
+        "Great job! Keep it up!",
+        "You're making amazing progress!",
+        "Fantastic work!",
+        "You're on fire! 🔥",
+        "Well done! 🎉",
+        "Amazing effort! Keep going!",
+      ];
+      const randomIndex = Math.floor(Math.random() * praises.length);
+      setPraise(praises[randomIndex]);
+
+      setTimeout(() => {
+        setPraise("");
+      }, 3000);
+    }
+
+    localStorage.setItem("prevCompletedLength", completed.length);
+  }, [data]);
+
   const handleTasksStatus = () => {
     const parsePercentage = parseFloat(completedTask());
 
@@ -56,6 +80,15 @@ const DisplayTodos = ({
     <>
       {data.length ? (
         <div>
+          {praise && (
+  <div className="popup">
+    <button className="cancel-button" onClick={() => setPraise("")}>✖️</button>
+    <p className="praise-message">{praise}</p>
+    <div className="clap-emoji">👏👏👏</div>
+  </div>
+)}
+
+
           <div className="max-md:container border text-black max-w-[700px] mt-10 max-sm:mt-2 m-auto rounded-3xl background-dark p-10 max-sm:p-5">
             <h1 className=" text-2xl max-sm:text-base font-medium">
               Summary
