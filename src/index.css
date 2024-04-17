@@ -96,9 +96,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(2, 21, 90, 0.922);
   color: white;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   z-index: 9999;
   animation: fadeInOut 5s ease;
@@ -115,7 +115,7 @@
   right: 10px;
   background: none;
   border: none;
-  color: white;
+  color: rgb(233, 31, 0);
   font-size: 24px;
   cursor: pointer;
 }
